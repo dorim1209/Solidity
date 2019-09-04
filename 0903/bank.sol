@@ -1,39 +1,26 @@
-    // bank balance;
-    // account balances;
-    
-    // deposit()
-
-    // withdraw()
-
-    // getBalance()
-
-    // getBankBalance()
 pragma solidity ^0.5.8;
 
 contract Bank {
-    address payable wallet;
-    mapping(address => uint256) public balances;
+    uint public totalDeposit;
+    mapping(address => uint) balanceOf;
 
-    event Purchase(
-        address indexed _buyer,
-        uint256 _amount
-    );
+    constructor() public {
 
-    constructor(address payable _wallet) public {
-        wallet = _wallet;
-    }
-    function getBalance() public view returns (uint) {
-        return address(this).balance;
     }
 
-
-    function() external payable {
-        buyToken();
+    function deposit() public payable{
+        balanceOf[msg.sender] += msg.value;
+        totalDeposit += msg.value;
     }
 
-    function buyToken() public payable {
-        balances[msg.sender] += 1;
-        wallet.transfer(msg.value);
-        emit Purchase(msg.sender, 1);
+    function withdraw(uint _amount) public payable {
+        require(balanceOf[msg.sender] >= _amount);
+        balanceOf[msg.sender] -= _amount;
+        totalDeposit -= _amount;
+        msg.sender.transfer(_amount);
+    }
+
+    function getBalanceOf(address _account) public view returns (uint){
+        return balanceOf[_account];
     }
 }
