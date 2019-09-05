@@ -17,3 +17,12 @@
   - **Crypto Zombie 실습** *(https://cryptozombies.io/)*
     - zombiefactory.sol
     - zombiepeeding.sol
+
+- 19.09.04
+  - **처음 배우는 블록체인** 
+    - bank.sol 수정
+    - CrowdFunding.sol
+
+- 19.09.05
+  - **처음 배우는 블록체인** 
+    - CrowdFundingv2.sol *upgrade version*
