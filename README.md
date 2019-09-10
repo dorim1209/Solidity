@@ -30,8 +30,8 @@
 - 19.09.06
 
   - **처음 배우는 블록체인** *Chapter  p.237*
-- truffle 설치
-1. mkdir truffletest
+  - truffle 설치
+      1. mkdir truffletest
       2. cd truffletest
       3. npm install -g truffle
       4. truffle init
@@ -54,4 +54,7 @@
 
   - **처음 배우는 블록체인** *Chapter  p.257*
 
-    
+- 19.09.10
+  - **처음 배우는 블록체인**
+    - pet-shop
+      - truffle unbox pet-shop    
